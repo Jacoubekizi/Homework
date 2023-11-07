@@ -1,0 +1,3 @@
+password for fedora : password!@#
+
+password for root in fedora : passwordRoot
