@@ -1,0 +1,62 @@
+create table works(
+  name varchar2(20),
+  age int,
+  gender varchar2(10),
+  salary int
+)
+
+insert into works values('Jacoub', 22, 'f', 3000);
+insert into works values('Nomair', 22, 'f', 2000);
+insert into works values('Nasser', 23, 'f', 1000);
+insert into works values('Ali', 25, 'f', 5444);
+
+declare
+  v_name works.name %type;
+  v_age works.age %type;
+  v_gender works.gender %type;
+  v_salary works.salary %type;
+  cursor c is (select *from works);
+begin
+  open c;
+  loop
+  exit when c %notfound;
+  fetch c into v_name,v_age , v_gender, v_salary ;
+  DBMS_OUTPUT.PUT_LINE(v_name||' '||v_salary);
+  end loop;
+  close c;
+end; 
+
+create or replace view v1 as works
+ select name, age, gender, salary from works 
+ where age=20;
+
+
+
+
+select * from ORDERS
+create table employee(
+name varchar2(10),
+dno int,
+id int);
+
+create table department(
+name_one varchar2(10),
+d_number int);
+
+insert into employee values('Ali', 2,1);
+insert into employee values('Ahmad', 1, 2);
+insert into employee values('Issa', 2, 3);
+
+insert into department values('it', 1);
+insert into department values('network', 2);
+
+select * from employee
+select * from department
+
+create or replace view V_one as
+(select name,name_one from employee, department
+where dno=D_number);
+
+select * from V_one
+
+drop table department

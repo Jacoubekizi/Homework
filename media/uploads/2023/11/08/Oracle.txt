@@ -1,0 +1,5 @@
+userName : jacoubokizi
+password: Password_#$oracle12~!!
+
+apps.password : oracleone
+

@@ -1,0 +1,28 @@
+        StudentAnalyticsTest S = new StudentAnalyticsTest();
+        Student [] s = S.generateStudentData();
+        StudentAnalytics A = new StudentAnalytics();
+        double Q = A.averageAgeOfEnrolledStudentsImperative(s);
+        System.out.println(Q);
+        double W = A.averageAgeOfEnrolledStudentsParallelStream(s);
+        System.out.println(W);
+        String E = A.mostCommonFirstNameOfInactiveStudentsImperative(s);
+        System.out.println(E);
+        String R = A.mostCommonFirstNameOfInactiveStudentsParallelStream(s);
+        System.out.println(R);
+        double T = A.countNumberOfFailedStudentsOlderThan20Imperative(s);
+        System.out.println(T);
+        double Y = A.countNumberOfFailedStudentsOlderThan20ParallelStream(s);
+        System.out.println(Y);
+        
+        System.out.println(getNCores());
+        System.out.println(S.averageAgeOfEnrolledStudentsHelper(REPEATS));
+        System.out.println(S.countNumberOfFailedStudentsOlderThan20Helper(REPEATS));
+        System.out.println(S.mostCommonFirstNameOfInactiveStudentsHelper(REPEATS));
+        S.testAverageAgeOfEnrolledStudents();
+        S.testAverageAgeOfEnrolledStudentsPerf();
+        S.testCountNumberOfFailedStudentsOlderThan20();
+        S.testCountNumberOfFailedStudentsOlderThan20Perf();
+        S.testMostCommonFirstNameOfInactiveStudents();
+        S.testMostCommonFirstNameOfInactiveStudentsPerf();
+        }
+    
